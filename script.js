@@ -1,29 +1,63 @@
-document.getElementById("copy").addEventListener("click", function (e) {
-    e.preventDefault();
-    alert("Copy");
-    console.log("sa");
-})
+// document.getElementById("copy").addEventListener("click", function (e) {
+//     e.preventDefault();
+//     alert("Copy");
+//     console.log("sa");
+// })
 function callPop(card) {
     const paragraph = card.querySelector("p").innerText;
     const number = card.querySelector("h2").innerText;
 
     alert("Calling " + paragraph + " Service" + " : " + number);
 }
-document.getElementById("National-Emergency").addEventListener("click", function (e) {
-    e.preventDefault();
-    const card = this.closest(".border");
-    callPop(card);
 
+
+document.getElementById("National-Emergency").addEventListener("click", function (e) {
+    
+    const card = this.closest(".rounded-2xl");
+    callPop(card);
 })
+
 document.getElementById("police").addEventListener("click", function (e) {
     e.preventDefault();
-    const card = this.closest(".border");
+    const card = this.closest(".rounded-2xl");
+    callPop(card);
+})
+document.getElementById("Fire-Service").addEventListener("click", function (e) {
+    e.preventDefault();
+   const card = this.closest(".rounded-2xl");
+    callPop(card);
+})
+document.getElementById("Ambulance").addEventListener("click", function (e) {
+    e.preventDefault();
+    const card = this.closest(".rounded-2xl");
+    callPop(card);
+})
+document.getElementById("Women").addEventListener("click", function (e) {
+    e.preventDefault();
+    const card = this.closest(".rounded-2xl");
+    callPop(card);
+})
+document.getElementById("Anti-Corruption").addEventListener("click", function (e) {
+    e.preventDefault();
+    const card = this.closest(".rounded-2xl");
+    callPop(card);
+})
+document.getElementById("Electricity-Outage").addEventListener("click", function (e) {
+    e.preventDefault();
+    const card = this.closest(".rounded-2xl");
+    callPop(card);
+})
+document.getElementById("Brac").addEventListener("click", function (e) {
+    e.preventDefault();
+    const card = this.closest(".rounded-2xl");
+    callPop(card);
+})
+document.getElementById("Bangladesh-Railway").addEventListener("click", function (e) {
+    e.preventDefault();
+   const card = this.closest(".rounded-2xl");
     callPop(card);
 })
 
-document.getElementById("love").addEventListener("click", function (e) {
-
-})
 
 const icons = document.querySelectorAll('.icon');
 const counter = document.getElementById('love-count');
@@ -52,13 +86,17 @@ callButtons.forEach(button => {
     });
 });
 
-const copies = document.querySelectorAll('.copies');
-const copy_counter = document.getElementById('copy-counter');
-let copy_count = 0;
+document.addEventListener('DOMContentLoaded', () => {
+    const copies = document.querySelectorAll('.copies');
+    const copy_counter = document.getElementById('copy-counter');
+    let copy_count = 0;
 
-copies.forEach(copy => {
-    copy.addEventListener('click', function () {
-        copy_count++;
-        copy_counter.textContent = copy_count;
+    copies.forEach(copy => {
+        copy.addEventListener('click', function () {
+            copy_count++;
+            copy_counter.textContent = copy_count;
+            alert("Copied!");
+        });
     });
 });
+
