@@ -99,4 +99,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+const callHistoryList = document.getElementById('call-history-list')
+const calls = document.querySelectorAll('.calls')
+const clearBtn = document.querySelector('button')
+
+function formatTime(date){
+    let h = date.getHours()
+    let m = date.getMinutes()
+    let s = date.getSeconds()
+    let ampm = h >= 12 ? 'PM' : 'AM'
+    h = h % 12
+    h = h ? h : 12
+    m = m < 10 ? '0'+m : m
+    s = s < 10 ? '0'+s : s
+    return `${h}:${m}:${s} ${ampm}`
+}
+
+calls.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+        let name = btn.closest('.rounded-2xl').querySelector('h1').innerText
+        let div = document.createElement('div')
+        div.className = 'flex justify-between items-center p-2 bg-gray-100 rounded-lg'
+        div.innerHTML = `<span class="text-gray-700 font-medium">${name}</span><span class="time text-gray-500 text-xs">${formatTime(new Date())}</span>`
+        callHistoryList.prepend(div)
+    })
+})
+
+clearBtn.addEventListener('click',()=>{
+    callHistoryList.innerHTML=''
+})
+
+
+
 

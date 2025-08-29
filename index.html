@@ -146,12 +146,23 @@
 
 
 
-        <div class=" h-full md:order-none order-last row-span-3 rounded-2xl bg-white ">
-            <i class="fa-regular fa-clock"><h1>Call History</h1></i>
-            <button class=" bg-[#00a63e] rounded-3xl text-white">Clear</button>
-            
-
+      <div class="h-full md:order-none order-last row-span-3 rounded-2xl bg-white p-4 shadow-md flex flex-col">
+    
+    
+    <div class="flex justify-between items-center mb-4">
+        <div class="flex items-center gap-2">
+            <i class="fa-regular fa-clock text-gray-600"></i>
+            <h2 class="font-bold text-lg text-gray-700">Call History</h2>
         </div>
+        <button class="bg-[#00a63e] text-white text-sm px-3 py-1 rounded-full hover:bg-green-600">Clear</button>
+    </div>
+
+    
+    <div id="call-history-list" class="flex-1 overflow-y-auto space-y-2">
+</div>
+
+</div>
+
 
 
         <div class="rounded-2xl p-4 bg-white shadow-md max-w-sm">
